@@ -1,0 +1,254 @@
+====================================================================================================
+Symbol Table: Global                                                             Parent: null
+----------------------------------------------------------------------------------------------------
+Name                Type                     Initial Value       Size           Offset         Nested
+----------------------------------------------------------------------------------------------------
+test                integer                       5              4              0              null
+t00                 integer                       5              4              4              null
+d                   double                        2.3            8              8              null
+t01                 double                        2.3            8              16             null
+i                   integer                                      4              24             null
+w                   arr(10, integer)                             40             28             null
+t02                 integer                       10             4              68             null
+a                   integer                       4              4              72             null
+t03                 integer                       4              4              76             null
+p                   ptr(integer)                                 4              80             null
+b                   integer                                      4              84             null
+func                void                                         0              88             func
+c                   char                                         1              88             null
+main                integer                                      4              89             main
+factorial           integer                                      4              93             factorial
+add                 integer                                      4              97             add
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Symbol Table: func                                                               Parent: Global
+----------------------------------------------------------------------------------------------------
+Name                Type                     Initial Value       Size           Offset         Nested
+----------------------------------------------------------------------------------------------------
+i                   integer                                      4              0              null
+d                   double                                       8              4              null
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Symbol Table: main                                                               Parent: Global
+----------------------------------------------------------------------------------------------------
+Name                Type                     Initial Value       Size           Offset         Nested
+----------------------------------------------------------------------------------------------------
+return              integer                                      4              0              null
+a                   arr(10, integer)              1              40             4              null
+t00                 integer                       10             4              44             null
+t01                 integer                                      4              48             null
+t02                 integer                       2              4              52             null
+t03                 integer                       1              4              56             null
+t04                 integer                       1              4              60             null
+x                   ptr(integer)                                 4              64             null
+y                   integer                                      4              68             null
+t05                 ptr(integer)                                 4              72             null
+t06                 ptr(null)                                    4              76             null
+t07                 integer                                      4              80             null
+t08                 integer                                      4              84             null
+t09                 integer                                      4              88             null
+t10                 integer                       1              4              92             null
+b                   integer                       2              4              96             null
+t11                 integer                       2              4              100            null
+c                   integer                                      4              104            null
+t12                 integer                                      4              108            null
+t13                 integer                                      4              112            null
+t14                 integer                                      4              116            null
+check               integer                                      4              120            null
+t15                 integer                                      4              124            null
+t16                 integer                                      4              128            null
+t17                 integer                                      4              132            null
+t18                 integer                                      4              136            null
+i                   integer                                      4              140            null
+t19                 integer                                      4              144            null
+n                   integer                       6              4              148            null
+t20                 integer                       6              4              152            null
+fn                  integer                                      4              156            null
+factorial           integer                                      4              160            null
+t21                 integer                                      4              164            null
+t22                 integer                                      4              168            null
+t23                 integer                       10             4              172            null
+v                   integer                       5              4              176            null
+t24                 integer                       5              4              180            null
+d                   double                                       8              184            null
+t25                 integer                       1              4              192            null
+t26                 integer                                      4              196            null
+t27                 integer                       10             4              200            null
+t28                 integer                                      4              204            null
+t29                 integer                                      4              208            null
+t30                 integer                                      4              212            null
+t31                 integer                                      4              216            null
+t32                 integer                       1              4              220            null
+t33                 integer                                      4              224            null
+t34                 integer                                      4              228            null
+t35                 integer                                      4              232            null
+t36                 integer                                      4              236            null
+t37                 integer                       2              4              240            null
+t38                 integer                                      4              244            null
+t39                 integer                       1              4              248            null
+t40                 integer                                      4              252            null
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Symbol Table: factorial                                                          Parent: Global
+----------------------------------------------------------------------------------------------------
+Name                Type                     Initial Value       Size           Offset         Nested
+----------------------------------------------------------------------------------------------------
+n                   integer                                      4              0              null
+return              integer                                      4              4              null
+m                   integer                                      4              8              null
+t00                 integer                       1              4              12             null
+t01                 integer                                      4              16             null
+r                   integer                       1              4              20             null
+t02                 integer                       1              4              24             null
+fn                  integer                                      4              28             null
+factorial           integer                                      4              32             null
+t03                 integer                       1              4              36             null
+t04                 integer                                      4              40             null
+t05                 integer                                      4              44             null
+t06                 integer                                      4              48             null
+t07                 integer                                      4              52             null
+----------------------------------------------------------------------------------------------------
+
+====================================================================================================
+Symbol Table: add                                                                Parent: Global
+----------------------------------------------------------------------------------------------------
+Name                Type                     Initial Value       Size           Offset         Nested
+----------------------------------------------------------------------------------------------------
+a                   integer                                      4              0              null
+b                   integer                                      4              4              null
+return              integer                                      4              8              null
+t00                 integer                       10             4              12             null
+t01                 integer                                      4              16             null
+x                   ptr(integer)                                 4              20             null
+y                   integer                                      4              24             null
+t02                 ptr(integer)                                 4              28             null
+t03                 ptr(null)                                    4              32             null
+t04                 integer                                      4              36             null
+t05                 integer                                      4              40             null
+t06                 integer                                      4              44             null
+----------------------------------------------------------------------------------------------------
+
+==============================
+Quad Translation
+------------------------------
+	0   :	t00 = 5
+	1   :	test = t00
+	2   :	t01 = 2.3
+	3   :	d = t01
+	4   :	t02 = 10
+	5   :	t03 = 4
+	6   :	a = t03
+
+main: 
+
+	8   :	t00 = 10
+	9   :	a = t00
+	10  :	t02 = 2
+	11  :	if a == t02 goto 14
+	12  :	goto 17
+	13  :	goto 19
+	14  :	t03 = 1
+	15  :	ret t03
+	16  :	goto 19
+	17  :	t04 = 1
+	18  :	ret t04
+	19  :	t05 = &y
+	20  :	x = t05
+	21  :	t07 = *x
+	22  :	*x = y
+	23  :	t08 = *x
+	24  :	y = t08
+	25  :	t10 = 1
+	26  :	a = t10
+	27  :	t11 = 2
+	28  :	b = t11
+	29  :	t12 = a + b
+	30  :	c = t12
+	31  :	t14 = a
+	32  :	a = a + 1
+	33  :	t15 = b * c
+	34  :	t16 = a + t15
+	35  :	check = t16
+	36  :	if check < c goto 39
+	37  :	goto 42
+	38  :	goto 42
+	39  :	t17 = a | b
+	40  :	c = t17
+	41  :	goto 42
+	42  :	a = a + 1
+	43  :	i = a
+	44  :	t20 = 6
+	45  :	n = t20
+	46  :	param n
+	47  :	t21 = call factorial, 1
+	48  :	fn = t21
+	49  :	t23 = 10
+	50  :	t24 = 5
+	51  :	v = t24
+	52  :	t25 = 1
+	53  :	i = t25
+	54  :	t27 = 10
+	55  :	t28 = t27 * 4
+	56  :	t29 = a[t28]
+	57  :	if i < t29 goto 62
+	58  :	goto 65
+	59  :	t30 = i
+	60  :	i = i + 1
+	61  :	goto 54
+	62  :	t31 = i
+	63  :	i = i + 1
+	64  :	goto 59
+	65  :	t32 = 1
+	66  :	t33 = i - t32
+	67  :	i = t33
+	68  :	t35 = i * 4
+	69  :	t36 = a[t35]
+	70  :	if t36 < v goto 65
+	71  :	goto 72
+	72  :	t37 = 2
+	73  :	i = t37
+	74  :	goto 77
+	75  :	if v == 0 goto 83
+	76  :	goto 80
+	77  :	if i == 0 goto 83
+	78  :	goto 75
+	79  :	goto 83
+	80  :	t39 = 1
+	81  :	i = t39
+	82  :	goto 83
+	83  :	ret 
+
+factorial: 
+
+	85  :	t00 = 1
+	86  :	t01 = n - t00
+	87  :	m = t01
+	88  :	t02 = 1
+	89  :	r = t02
+	90  :	goto 99
+	91  :	t03 = 1
+	92  :	t04 = m - t03
+	93  :	param t04
+	94  :	t05 = call factorial, 1
+	95  :	fn = t05
+	96  :	t06 = n * fn
+	97  :	r = t06
+	98  :	goto 101
+	99  :	if m == 0 goto 101
+	100 :	goto 91
+	101 :	ret r
+
+add: 
+
+	103 :	t00 = 10
+	104 :	a = t00
+	105 :	t02 = &y
+	106 :	x = t02
+	107 :	t04 = *x
+	108 :	*x = y
+	109 :	t05 = *x
+	110 :	y = t05
+------------------------------

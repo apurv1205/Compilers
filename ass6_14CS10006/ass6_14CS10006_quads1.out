@@ -1,0 +1,159 @@
+========================================================================================================================
+Symbol Table: Global                                                             Parent: null
+------------------------------------------------------------------------------------------------------------------------
+Name           Type                     Category       Initial Value                 Size        Offset      Nested
+------------------------------------------------------------------------------------------------------------------------
+printi         integer                  function                                     4           0           printi
+prints         integer                  function                                     4           4           prints
+readi          integer                  function                                     4           8           readi
+f              integer                  function                                     4           12          f
+main           integer                  function                                     4           16          main
+------------------------------------------------------------------------------------------------------------------------
+
+========================================================================================================================
+Symbol Table: printi                                                             Parent: Global
+------------------------------------------------------------------------------------------------------------------------
+Name           Type                     Category       Initial Value                 Size        Offset      Nested
+------------------------------------------------------------------------------------------------------------------------
+num            integer                  param                                        4           0           null
+return         integer                  local                                        4           4           null
+------------------------------------------------------------------------------------------------------------------------
+
+========================================================================================================================
+Symbol Table: prints                                                             Parent: Global
+------------------------------------------------------------------------------------------------------------------------
+Name           Type                     Category       Initial Value                 Size        Offset      Nested
+------------------------------------------------------------------------------------------------------------------------
+c              ptr(char)                param                                        4           0           null
+return         integer                  local                                        4           4           null
+------------------------------------------------------------------------------------------------------------------------
+
+========================================================================================================================
+Symbol Table: readi                                                              Parent: Global
+------------------------------------------------------------------------------------------------------------------------
+Name           Type                     Category       Initial Value                 Size        Offset      Nested
+------------------------------------------------------------------------------------------------------------------------
+eP             ptr(integer)             param                                        4           0           null
+return         integer                  local                                        4           4           null
+------------------------------------------------------------------------------------------------------------------------
+
+========================================================================================================================
+Symbol Table: f                                                                  Parent: Global
+------------------------------------------------------------------------------------------------------------------------
+Name           Type                     Category       Initial Value                 Size        Offset      Nested
+------------------------------------------------------------------------------------------------------------------------
+a              ptr(integer)             param                                        4           0           null
+return         integer                  local                                        4           4           null
+b              integer                  local                                        4           8           null
+t00            integer                  temp                                         4           12          null
+t01            integer                  temp                                         4           16          null
+t02            integer                  temp           2                             4           20          null
+t03            integer                  temp                                         4           24          null
+t04            integer                  temp                                         4           28          null
+------------------------------------------------------------------------------------------------------------------------
+
+========================================================================================================================
+Symbol Table: main                                                               Parent: Global
+------------------------------------------------------------------------------------------------------------------------
+Name           Type                     Category       Initial Value                 Size        Offset      Nested
+------------------------------------------------------------------------------------------------------------------------
+return         integer                  local                                        4           0           null
+a              integer                  local                                        4           4           null
+b              integer                  local                                        4           8           null
+e              ptr(integer)             local                                        4           12          null
+prints         integer                  local                                        4           16          null
+t00            ptr(char)                temp           "***********************Some random outputs!!*************************\n"4           20          null
+t01            integer                  temp                                         4           24          null
+t02            integer                  temp           3                             4           28          null
+t03            integer                  temp                                         4           32          null
+t04            ptr(integer)             temp                                         4           36          null
+t05            ptr(null)                temp                                         4           40          null
+t06            ptr(char)                temp           "Passing pointers to function f!\n"4           44          null
+t07            integer                  temp                                         4           48          null
+t08            ptr(char)                temp           "Value passed to function: "  4           52          null
+t09            integer                  temp                                         4           56          null
+printi         integer                  local                                        4           60          null
+t10            integer                  temp                                         4           64          null
+t11            ptr(char)                temp           "\n"                          4           68          null
+t12            integer                  temp                                         4           72          null
+t13            ptr(char)                temp           "Value returned from function s is: "4           76          null
+t14            integer                  temp                                         4           80          null
+t15            integer                  temp                                         4           84          null
+t16            ptr(char)                temp           "\n"                          4           88          null
+t17            integer                  temp                                         4           92          null
+t18            ptr(char)                temp           "Read an integer!!"           4           96          null
+t19            integer                  temp                                         4           100         null
+t20            ptr(char)                temp           "\n"                          4           104         null
+t21            integer                  temp                                         4           108         null
+readi          integer                  local                                        4           112         null
+t22            integer                  temp                                         4           116         null
+t23            integer                  temp                                         4           120         null
+t24            ptr(char)                temp           "The integer that was read is:"4           124         null
+t25            integer                  temp                                         4           128         null
+t26            integer                  temp                                         4           132         null
+t27            ptr(char)                temp           "\n"                          4           136         null
+t28            integer                  temp                                         4           140         null
+t29            integer                  temp           0                             4           144         null
+------------------------------------------------------------------------------------------------------------------------
+
+==============================
+Quad Translation
+------------------------------
+
+f: 
+
+	1   :	t00 = *a
+	2   :	b = t00
+	3   :	t02 = 2
+	4   :	t03 = b + t02
+	5   :	b = t03
+	6   :	ret b
+
+main: 
+
+	9   :	op
+	10  :	param t00
+	11  :	t01 = call prints, 1
+	12  :	t02 = 3
+	13  :	b = t02
+	14  :	t04 = &b
+	15  :	e = t04
+	16  :	op
+	17  :	param t06
+	18  :	t07 = call prints, 1
+	19  :	op
+	20  :	param t08
+	21  :	t09 = call prints, 1
+	22  :	param b
+	23  :	t10 = call printi, 1
+	24  :	op
+	25  :	param t11
+	26  :	t12 = call prints, 1
+	27  :	op
+	28  :	param t13
+	29  :	t14 = call prints, 1
+	30  :	param a
+	31  :	t15 = call printi, 1
+	32  :	op
+	33  :	param t16
+	34  :	t17 = call prints, 1
+	35  :	op
+	36  :	param t18
+	37  :	t19 = call prints, 1
+	38  :	op
+	39  :	param t20
+	40  :	t21 = call prints, 1
+	41  :	param e
+	42  :	t22 = call readi, 1
+	43  :	b = t22
+	44  :	op
+	45  :	param t24
+	46  :	t25 = call prints, 1
+	47  :	param b
+	48  :	t26 = call printi, 1
+	49  :	op
+	50  :	param t27
+	51  :	t28 = call prints, 1
+	52  :	t29 = 0
+	53  :	ret t29
+------------------------------

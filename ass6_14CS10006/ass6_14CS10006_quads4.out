@@ -1,0 +1,208 @@
+========================================================================================================================
+Symbol Table: Global                                                             Parent: null
+------------------------------------------------------------------------------------------------------------------------
+Name           Type                     Category       Initial Value                 Size        Offset      Nested
+------------------------------------------------------------------------------------------------------------------------
+prints         integer                  function                                     4           0           prints
+printi         integer                  function                                     4           4           printi
+readi          integer                  function                                     4           8           readi
+fib            integer                  function                                     4           12          fib
+main           integer                  function                                     4           16          main
+------------------------------------------------------------------------------------------------------------------------
+
+========================================================================================================================
+Symbol Table: prints                                                             Parent: Global
+------------------------------------------------------------------------------------------------------------------------
+Name           Type                     Category       Initial Value                 Size        Offset      Nested
+------------------------------------------------------------------------------------------------------------------------
+c              ptr(char)                param                                        4           0           null
+return         integer                  local                                        4           4           null
+------------------------------------------------------------------------------------------------------------------------
+
+========================================================================================================================
+Symbol Table: printi                                                             Parent: Global
+------------------------------------------------------------------------------------------------------------------------
+Name           Type                     Category       Initial Value                 Size        Offset      Nested
+------------------------------------------------------------------------------------------------------------------------
+i              integer                  param                                        4           0           null
+return         integer                  local                                        4           4           null
+------------------------------------------------------------------------------------------------------------------------
+
+========================================================================================================================
+Symbol Table: readi                                                              Parent: Global
+------------------------------------------------------------------------------------------------------------------------
+Name           Type                     Category       Initial Value                 Size        Offset      Nested
+------------------------------------------------------------------------------------------------------------------------
+eP             ptr(integer)             param                                        4           0           null
+return         integer                  local                                        4           4           null
+------------------------------------------------------------------------------------------------------------------------
+
+========================================================================================================================
+Symbol Table: fib                                                                Parent: Global
+------------------------------------------------------------------------------------------------------------------------
+Name           Type                     Category       Initial Value                 Size        Offset      Nested
+------------------------------------------------------------------------------------------------------------------------
+a              integer                  param                                        4           0           null
+return         integer                  local                                        4           4           null
+prints         integer                  local                                        4           8           null
+t00            ptr(char)                temp           "\nEntered the function for i : "4           12          null
+t01            integer                  temp                                         4           16          null
+printi         integer                  local                                        4           20          null
+t02            integer                  temp                                         4           24          null
+b              integer                  local                                        4           28          null
+t03            integer                  temp           1                             4           32          null
+t04            integer                  temp                                         4           36          null
+c              integer                  local                                        4           40          null
+d              integer                  local                                        4           44          null
+t05            integer                  temp           0                             4           48          null
+t06            integer                  temp           1                             4           52          null
+fib            integer                  local                                        4           56          null
+t07            integer                  temp                                         4           60          null
+t08            integer                  temp                                         4           64          null
+t09            integer                  temp           1                             4           68          null
+t10            integer                  temp                                         4           72          null
+t11            integer                  temp                                         4           76          null
+t12            integer                  temp                                         4           80          null
+t13            integer                  temp                                         4           84          null
+t14            integer                  temp                                         4           88          null
+t15            integer                  temp                                         4           92          null
+t16            integer                  temp           1                             4           96          null
+------------------------------------------------------------------------------------------------------------------------
+
+========================================================================================================================
+Symbol Table: main                                                               Parent: Global
+------------------------------------------------------------------------------------------------------------------------
+Name           Type                     Category       Initial Value                 Size        Offset      Nested
+------------------------------------------------------------------------------------------------------------------------
+return         integer                  local                                        4           0           null
+a              integer                  local          5                             4           4           null
+t00            integer                  temp           5                             4           8           null
+b              integer                  local          2                             4           12          null
+t01            integer                  temp           2                             4           16          null
+c              integer                  local                                        4           20          null
+ch             char                     local          'x'                           1           24          null
+t02            char                     temp           'x'                           1           25          null
+str            ptr(char)                local                                        4           26          null
+t03            ptr(char)                temp           "Hello World\n"               4           30          null
+t04            ptr(null)                temp                                         4           34          null
+str1           ptr(char)                local                                        4           38          null
+t05            ptr(char)                temp           "abcd"                        4           42          null
+t06            ptr(null)                temp                                         4           46          null
+read           integer                  local                                        4           50          null
+t07            integer                  temp           5                             4           54          null
+t08            integer                  temp                                         4           58          null
+eP             integer                  local                                        4           62          null
+t09            integer                  temp                                         4           66          null
+t10            integer                  temp                                         4           70          null
+t11            integer                  temp                                         4           74          null
+prints         integer                  local                                        4           78          null
+t12            ptr(char)                temp           "Please enter a number for recursive fibonacci: "4           82          null
+t13            integer                  temp                                         4           86          null
+readi          integer                  local                                        4           90          null
+t14            ptr(integer)             temp                                         4           94          null
+t15            integer                  temp                                         4           98          null
+t16            integer                  temp                                         4           102         null
+t17            ptr(char)                temp           "You Entered "                4           106         null
+t18            integer                  temp                                         4           110         null
+printi         integer                  local                                        4           114         null
+t19            integer                  temp                                         4           118         null
+t20            integer                  temp                                         4           122         null
+t21            ptr(char)                temp           "\n"                          4           126         null
+t22            integer                  temp                                         4           130         null
+t23            ptr(char)                temp           "Now testting for recursive fibonacci number ....Entering the function\n"4           134         null
+t24            integer                  temp                                         4           138         null
+out            integer                  local          0                             4           142         null
+t25            integer                  temp           0                             4           146         null
+fib            integer                  local                                        4           150         null
+t26            integer                  temp                                         4           154         null
+t27            integer                  temp                                         4           158         null
+t28            ptr(char)                temp           "\n\nReturned from recursive fibonacci function"4           162         null
+t29            integer                  temp                                         4           166         null
+------------------------------------------------------------------------------------------------------------------------
+
+==============================
+Quad Translation
+------------------------------
+
+fib: 
+
+	1   :	op
+	2   :	param t00
+	3   :	t01 = call prints, 1
+	4   :	param a
+	5   :	t02 = call printi, 1
+	6   :	t03 = 1
+	7   :	t04 = a - t03
+	8   :	b = t04
+	9   :	t05 = 0
+	10  :	if b <= t05 goto 13
+	11  :	goto 16
+	12  :	goto 28
+	13  :	t06 = 1
+	14  :	ret t06
+	15  :	goto 28
+	16  :	param b
+	17  :	t07 = call fib, 1
+	18  :	c = t07
+	19  :	t09 = 1
+	20  :	t10 = b - t09
+	21  :	b = t10
+	22  :	param b
+	23  :	t12 = call fib, 1
+	24  :	d = t12
+	25  :	t14 = c + d
+	26  :	c = t14
+	27  :	ret c
+	28  :	t16 = 1
+	29  :	ret t16
+
+main: 
+
+	32  :	t00 = 5
+	33  :	a = t00
+	34  :	t01 = 2
+	35  :	b = t01
+	36  :	op
+	37  :	ch = t02
+	38  :	op
+	39  :	str = t03
+	40  :	op
+	41  :	str1 = t05
+	42  :	t07 = 5
+	43  :	read = t07
+	44  :	if a < b goto 47
+	45  :	goto 50
+	46  :	goto 52
+	47  :	t09 = a
+	48  :	a = a + 1
+	49  :	goto 52
+	50  :	t10 = a + b
+	51  :	c = t10
+	52  :	op
+	53  :	param t12
+	54  :	t13 = call prints, 1
+	55  :	t14 = &eP
+	56  :	param t14
+	57  :	t15 = call readi, 1
+	58  :	read = t15
+	59  :	op
+	60  :	param t17
+	61  :	t18 = call prints, 1
+	62  :	param read
+	63  :	t19 = call printi, 1
+	64  :	c = t19
+	65  :	op
+	66  :	param t21
+	67  :	t22 = call prints, 1
+	68  :	op
+	69  :	param t23
+	70  :	t24 = call prints, 1
+	71  :	t25 = 0
+	72  :	out = t25
+	73  :	param read
+	74  :	t26 = call fib, 1
+	75  :	out = t26
+	76  :	op
+	77  :	param t28
+	78  :	t29 = call prints, 1
+------------------------------
